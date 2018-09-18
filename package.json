@@ -1,5 +1,5 @@
 {
-  "name": "vue-movie-service",
+  "name": "@rubyl/vue-movie-service",
   "version": "1.0.1",
   "description": "Vue Movie service",
   "author": "Ruby Lim <ruby.b.lim@gmail.com>",

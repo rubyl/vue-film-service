@@ -1,7 +1,19 @@
-import service from './service/service'
+import service from '../service/service'
 
 export default {
-  getWord(params) {
-    return Api().get('/')
+  getList() {
+    return service().get('/')
+  }
+
+  createFilm() {
+
+  }
+
+  updateFilm() {
+
+  }
+
+  deleteFilm() {
+
   }
 }

@@ -1,4 +1,4 @@
-import filmService from '../../filmService'
+import filmService from '../../api/filmService'
 
 const state = {}
 
