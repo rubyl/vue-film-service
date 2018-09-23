@@ -1,19 +1,38 @@
 import service from '../service/service'
 
 export default {
-  getList() {
-    return service().get('/')
-  }
+  getList(params) {
+    let query = ''
+    if (Object.keys(params).length !== 0) {
+      let key = Object.keys(params)
+      let value = Object.values(params)
+      query = '?' + key + "=" + value
+    }
+    return service().get('/' + query).then(response => {
+      return response.data
+    })
+  },
 
-  createFilm() {
+  createFilm(film) {
+    return service().post('/film', {
+      name: film.name,
+      rating: film.rating,
+      image: film.image,
+      trailer: film.trailer
+    })
+  },
 
-  }
+  updateFilm(film) {
+    return service().put(`/film/${film._id}`, {
+      name: film.name,
+      rating: film.rating,
+      image: film.image,
+      trailer: film.trailer
+    })
 
-  updateFilm() {
+  },
 
-  }
-
-  deleteFilm() {
-
+  deleteFilm(film) {
+    return service().delete(`/film/${film._id}`)
   }
 }
